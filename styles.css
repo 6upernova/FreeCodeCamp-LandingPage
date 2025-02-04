@@ -1,0 +1,223 @@
+:root {
+    /* Colors */
+    --primary-bg: #ffffff;
+    --secondary-bg: #f8f9fa;
+    --primary-text: #697683;
+    --secondary-text: #34495e;
+    --accent-color: #4ac94a;
+    --border-color: #e0e0e0;
+    
+    /* Typography */
+    --font-primary: 'Oswald', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+    --font-code: 'Fira Code', 'Courier New', monospace;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    
+    /* Layout */
+    --navbar-width: 300px;
+    --content-max-width: 1200px;
+    --header-height: 60px;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  }
+  
+
+body{
+    background-color:var(--primary-bg)
+}
+
+/*Header and Nav-bar*/
+
+#header-img{
+    width: auto;
+    height: 100px;
+}
+
+
+#header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size:  2em;
+    background-color: var(--secondary-bg);
+    border: 2px solid #34495e ;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+#logo{
+    width: 60vw;
+    display: inherit;
+    align-items: center;
+    gap: 10px;
+}
+
+#nav-bar{
+    width: var(--navbar-width);
+    
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+  transform: translateY(5px);
+}
+
+
+nav > ul {
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+li{
+    list-style:none;
+    font-size: medium;
+    padding: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/*Register And login Form*/
+
+/* Ocultar los radio buttons */
+input[name="form-switch"] {
+    display: none;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.forms-wrapper {
+    position: relative;
+    height: 400px; /* Ajusta según el tamaño de tus formularios */
+}
+
+.form {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Control de visibilidad de formularios */
+#login-switch:checked ~ .forms-wrapper #login-form {
+    opacity: 1;
+    visibility: visible;
+}
+
+#register-switch:checked ~ .forms-wrapper #register-form {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group input:valid {
+    border-color: #007bff;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label {
+    top: -10px;
+    left: 5px;
+    font-size: 12px;
+    background: white;
+    padding: 0 5px;
+    color: #007bff;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+.form-link {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.switch-link {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.switch-link:hover {
+    text-decoration: underline;
+}
